@@ -1,0 +1,232 @@
+Link pai = https://dadosabertos.cm-lisboa.pt/en/dataset/ecoponto
+https://geodados-cml.hub.arcgis.com/datasets/CML::amb-reciclagem-1/explore?layer=2
+    - Frequencia de atualizacao:
+        Bimestral
+    - Formato do dado:
+        csv, excel ou SQL Database
+	- Dados:
+		Higiene Urbana - ecopontos
+        Freguesias (Limites Geográficos)
+    - Exemplo de dados:
+        Object ID	Código SIG	IDTipo	Descrição	Freguesia	Morada	Local	SE_ANNO_CAD_DATA	TPRS_AB	GlobalID	x	y
+        1	7270	9114	Ecoponto de superfície	Lumiar	Avenida David Mourao Ferreira	Ft centro de dia	System.Byte[]	ECO	d619f974-3519-4933-811b-c31f2d8f8e45	-1018840.841	4689862.392
+        2	7285	9114	Ecoponto de superfície	StaClara	Rua Rogerio Moura	entre R Bernardo Marques e R Manuel Lopes	System.Byte[]	ECO	98192a68-6b61-4c6a-96eb-5090f4c18c20	-1018374.263	4690645.819
+    - Por que esses dados:
+        Mapear a infraestrutura oficial de resíduos (localização exata, tipo, capacidade em litros) e os esforços operacionais de limpeza (rotas de varrimento/lavagem). Fornece a "base" de "o que existe" e as fronteiras administrativas (freguesias) para agregar os dados.
+
+
+Link pai = https://dados.cm-lisboa.pt/dataset/circuitos-de-recolha-de-residuos-urbanos
+https://geodados-cml.hub.arcgis.com/datasets/CML::circuitoscontentores/explore
+    - Frequencia de atualizacao:
+        Bimestral
+    - Formato do dado:
+        csv, excel ou SQL Database
+	- Dados:
+		Frequencia de recolha dos ecopontos e o tipo do contentor
+    - Exemplo de dados:
+        Object ID	Código SIG	ID Tipo	ID Circuito	Código Circuito	Circuito Resíduo	Circuito Regra	Circuito Periodicidade	Circuito Hora de Início	Ponto de Recolha	Ponto de Recolha Tipo	Ponto de Recolha Freguesia	Ponto de Recolha Local	Ponto de Recolha Coordenada x	Ponto de Recolha Coordenada y	Contentor Resíduo	Contentor Tipo	Contentor Capacidade	Contentor Quantidade	Contentor Total Litros	GlobalID	x	y
+        1	2379	9220	17058	E1CentMK	Embalagens	2ªfeira a sábado, a partir das 13:30	6 vezes/semana	13:00	2	Entidades com remoção porta-a-porta	Estrela	2: R Bela Vista à Lapa, 36	-89199	-105599	Embalagens	CV0140	140	1	140	5fff5aa0-e6da-44b2-a585-ae39af2dc682	-1019533.91	4680586.236
+        2	2380	9220	8137	P5405MK	Papel e Cartão	4ª feira, a partir das 6:30	1 vez/semana	5:30	2	Entidades com remoção porta-a-porta	Estrela	2: R Bela Vista à Lapa, 36	-89199	-105599	Papel e Cartão	CV0140	140	1	140	f9e16aa6-c382-4863-a36c-074261243024	-1019533.91	4680586.236
+    - Por que esses dados:
+        É a frequência do recolhimento do lixo
+
+
+
+https://overpass-turbo.eu/ (Open Street Map)
+    - Frequencia de atualizacao:
+        Sempre que houver alguma atualizacao
+    - Formato do dado:
+        JSON (raw OSM data)
+    - Exemplo de pesquisa:
+        amenity=recycling in Lisbon
+	- Dados:
+		Ecopontos (amenity=recycling), contentores (waste=bin), e outras infraestruturas.
+    - Exemplo de dados:
+    {
+        "version": 0.6,
+        "generator": "Overpass API 0.7.62.8 e802775f",
+        "osm3s": {
+            "timestamp_osm_base": "2025-10-25T15:33:00Z",
+            "timestamp_areas_base": "2025-10-25T12:32:58Z",
+            "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+        },
+        "elements": [
+            {
+                "type": "node",
+                "id": 219221494,
+                "lat": 38.7806973,
+                "lon": -9.1724586,
+                "tags": {
+                    "amenity": "recycling"
+                }
+            },
+            {
+                "type": "node",
+                "id": 259114738,
+                "lat": 38.7638037,
+                "lon": -9.1707668,
+                "tags": {
+                    "amenity": "recycling",
+                    "created_by": "Potlatch 0.8a",
+                    "mapillary": "502788334197789",
+                    "recycling:glass_bottles": "yes",
+                    "recycling_type": "container",
+                    "survey:date": "2019-11-22"
+                }
+            }
+        ]
+    }
+    - Por que esses dados:
+        Complementar e validar a base de dados oficial. Permite identificar infraestruturas mapeadas pela comunidade (potenciais "pontos de sombra" não oficiais) e obter detalhes adicionais sobre os tipos de resíduos aceites (através das "tags" do OSM).
+
+
+
+https://www.ine.pt/
+https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_qa_agregados
+    - Dados:
+		Censos populacionais - Faixa Etária.
+    - Exemplo de dados:
+        Zona Geográfica	Total			Solteiro			Casado			Divorciado			Viúvo		
+        Classe Etária	HM	H	M	HM	H	M	HM	H	M	HM	H	M	HM	H	M
+        1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16
+        Área Metropolitana de Lisboa	2840363	1619607	1220756	779706	359401	420305	1448815	1087366	361449	382202	130070	252132	229640	42770	186870
+https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_qa_edificios
+    - Dados:
+		Censos populacionais - Edifícios.
+    - Exemplo de dados:
+        Zona Geográfica	Edifícios segundo o número de pisos							
+        Total	1 piso	2 pisos	3 pisos	4 pisos	5 pisos	6 pisos	7 ou mais pisos
+        1	2	3	4	5	6	7	8	9
+        Área Metropolitana de Lisboa	452582	146954	157044	58428	36809	22075	11070	20202
+https://www.ine.pt/xportal/xmain?xpid=INE&xpgid=ine_qa_edificios
+    - Dados:
+		Censos populacionais - População.
+    - Exemplo de dados:
+        Zona Geográfica	Total	Menos de 15 anos	De 15 a 19 anos	De 20 a 24 anos	De 25 a 29 anos	De 30 a 34 anos	De 35 a 39 anos	De 40 a 44 anos	De 45 a 49 anos	De 50 a 54 anos	De 55 a 59 anos	De 60 a 64 anos	De 65 a 69 anos	De 70 a 74 anos	De 75 ou mais anos
+        Nível de escolaridade e sexo															
+        1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16
+            Área Metropolitana de Lisboa      HM	2870208	411213	151955	158623	164834	172305	189102	220917	227684	197503	183846	171604	161925	155936	302761
+                                                H	1350446	210923	77552	80221	81767	84315	91198	104989	107781	92519	84231	76824	71388	68261	118477
+                                                M	1519762	200290	74403	78402	83067	87990	97904	115928	119903	104984	99615	94780	90537	87675	184284
+                Nenhum        HM	359664	254730	1144	2084	3472	4374	4538	4896	4996	5263	5929	7337	8870	9073	42958
+                            H	165698	130807	622	1107	1728	2053	2016	2112	2077	2157	2360	2928	3284	3270	9177
+                            M	193966	123923	522	977	1744	2321	2522	2784	2919	3106	3569	4409	5586	5803	33781
+                Ensino básico        HM	1170368	156483	98522	26027	27245	33074	42690	53622	66590	76489	84020	88468	97374	108841	210923
+                                    H	569785	80116	52004	15770	15788	18894	24529	30796	36674	39544	40918	40390	42331	46699	85332
+                             M	600583	76367	46518	10257	11457	14180	18161	22826	29916	36945	43102	48078	55043	62142	125591
+
+
+    
+Resumo desses dados acima
+	- Dados:
+		Censos populacionais (dados por freguesia, bairro).
+        Estatísticas de rendimento, poder de compra e densidade populacional.
+        Inquéritos sobre o uso do tempo e consumo das famílias.|
+    - Exemplo de dados:
+        Freguesia (Código),Freguesia (Nome),População Residente,N.º Famílias,N.º Edifícios, Escolaridade
+        110601,Ajuda,14305,6500,1500, Básico
+        110602,Alcântara,27368,12000,2800, Ensino Superior
+        ...,...,...,...,...
+    - Por que esses dados:
+        Quantificar a "procura" e o contexto socioeconómico. Permite calcular a densidade populacional e o número de famílias por freguesia, sendo essencial para criar os rácios-chave do projeto, como "habitantes por ecoponto" ou "capacidade de recolha vs. população".
+
+
+
+https://geoapi.pt/docs/
+    - Frequencia de atualizacao:
+        
+    - Formato do dado:
+        JSON (resposta da API)
+    - Exemplo de requisicao da api que funciona:    (GET)
+        geoapi.pt/municipio/lisboa?json=1
+	- Dados:
+		Geocodificação reversa: Coordenadas -> Morada/Freguesia.
+        Validação de códigos postais.
+        Obtenção de limites administrativos (concelhos, distritos).
+    - Exemplo de dados:
+        {
+            "codigoine": "1106",
+            "distrito": "LISBOA",
+            "concelho": "LISBOA",
+            "freguesia": "Areeiro",
+            "codigopostal": "1149-014"
+        }
+    - Por que esses dados:
+        Padronizar e enriquecer dados de localização. É uma ferramenta de "limpeza de dados" (data cleansing) para garantir que moradas e coordenadas de fontes diferentes (CML, OSM, Ocorrências) sejam comparáveis e possam ser agrupadas corretamente por freguesia.
+
+
+
+https://open-meteo.com/ (vai ser o nosso realtime)
+    - Frequencia de atualizacao:
+        
+    - Formato do dado:
+        JSON (retorno da API)
+    - Exemplo de requisicao da api que funciona:    (GET)
+        https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,wind_speed_10m&hourly=temperature_2m,relative_humidity_2m,wind_speed_10m
+    - Exemplo de dados:
+        {
+            "latitude": 52.52,
+            "longitude": 13.419998,
+            "generationtime_ms": 0.22339820861816406,
+            "utc_offset_seconds": 0,
+            "timezone": "GMT",
+            "timezone_abbreviation": "GMT",
+            "elevation": 38.0,
+            "current_units": {
+                "time": "iso8601",
+                "interval": "seconds",
+                "temperature_2m": "°C",
+                "wind_speed_10m": "km/h"
+            },
+            "current": {
+                "time": "2022-01-01T15:00",
+                "temperature_2m": 2.4,
+                "wind_speed_10m": 11.9,
+            },
+            "hourly": {
+                "time": ["2022-07-01T00:00","2022-07-01T01:00", ...],
+                "wind_speed_10m": [3.16,3.02,3.3,3.14,3.2,2.95, ...],
+                "temperature_2m": [13.7,13.3,12.8,12.3,11.8, ...],
+                "relative_humidity_2m": [82,83,86,85,88,88,84,76, ...],
+            }
+        }
+    - Por que esses dados:
+        Identificar variáveis dinâmicas (preditoras) que influenciam o comportamento de descarte. Permite testar hipóteses, como o aumento de resíduos de embalagens (ex: delivery) em dias de chuva intensa ou o aumento de resíduos de bebidas em ondas de calor.
+
+
+https://lisboaaberta.cm-lisboa.pt/index.php/pt/dados/conjuntos-de-dados
+    - Frequencia de atualizacao:
+        Trimestral
+    - Formato do dado:
+        Excel
+    - Link para os dados:
+        https://dados.cm-lisboa.pt/dataset/ocorrencias-na-minha-rua
+    - Exemplo de dados:
+        dt_registo	area	tipo	Subseccao	Latitude_Subseccao	Longitude_Subseccao	Freguesia
+        09-04-2025	Higiene Urbana	Remoção-Monstros-Pedido de recolha	11060100101	38.7022816	-9.196243569	Ajuda
+
+    - Por que esses dados:
+        Medir as falhas do sistema (feedback do cidadão). Esta é a "variável-alvo" dinâmica. Permite identificar onde e quando o sistema de recolha está a falhar (ex: picos de queixas de "Contentor cheio"), correlacionando os problemas reais com a meteorologia (IPMA) e a demografia (INE).
+
+
+https://www.ersar.pt/pt/site-publicacoes/Paginas/edicoes-anuais-do-RASARP.aspx
+    - Frequencia de atualizacao:
+        Anual
+    - Formato do dado:
+        Excel
+    - Onde pegar os dados:
+        - Vai no link e escolhe o "Volume 1 - Caraterização do setor de águas e resíduos"
+        - Baixa o excel
+            - No excel:
+                - filtrar a "Empresa (coluna A)" com os valores "CM de Lisboa" e "VALORSUL"
+                - filtrar o "Indicador (coluna F)" com os valores "Taxa"
+            - O que queremos estará na coluna G "Valor".
+
+
+https://www.valorsul.pt/pt/indicadores/informacao-financeira-rc/
+    - Frequencia de atualizacao:
+        Anual
+    - Formato do dado:
+        PDF
+    - Onde pegar os dados:
+        - Relatório de Contas, olhar as tabelas presentes no pdf
