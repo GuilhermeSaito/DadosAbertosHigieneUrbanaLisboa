@@ -207,26 +207,3 @@ https://lisboaaberta.cm-lisboa.pt/index.php/pt/dados/conjuntos-de-dados
 
     - Por que esses dados:
         Medir as falhas do sistema (feedback do cidadão). Esta é a "variável-alvo" dinâmica. Permite identificar onde e quando o sistema de recolha está a falhar (ex: picos de queixas de "Contentor cheio"), correlacionando os problemas reais com a meteorologia (IPMA) e a demografia (INE).
-
-
-https://www.ersar.pt/pt/site-publicacoes/Paginas/edicoes-anuais-do-RASARP.aspx
-    - Frequencia de atualizacao:
-        Anual
-    - Formato do dado:
-        Excel
-    - Onde pegar os dados:
-        - Vai no link e escolhe o "Volume 1 - Caraterização do setor de águas e resíduos"
-        - Baixa o excel
-            - No excel:
-                - filtrar a "Empresa (coluna A)" com os valores "CM de Lisboa" e "VALORSUL"
-                - filtrar o "Indicador (coluna F)" com os valores "Taxa"
-            - O que queremos estará na coluna G "Valor".
-
-
-https://www.valorsul.pt/pt/indicadores/informacao-financeira-rc/
-    - Frequencia de atualizacao:
-        Anual
-    - Formato do dado:
-        PDF
-    - Onde pegar os dados:
-        - Relatório de Contas, olhar as tabelas presentes no pdf
