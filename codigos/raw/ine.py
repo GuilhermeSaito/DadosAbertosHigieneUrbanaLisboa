@@ -2,6 +2,7 @@ import requests
 import pandas as pd
 import os
 import time
+from geoapi_freguesias import get_lisbon_district_full_structure
 
 def get_ine_data_api(codigo_indicador, cod_regiao):
     url = "https://www.ine.pt/ine/json_indicador/pindica.jsp"
@@ -62,24 +63,18 @@ def get_ine_data_api(codigo_indicador, cod_regiao):
 indicadores = {
     "populacao_idade_sexo": "0011638",
     "edificios": "0012582",
-    "familias": "0011697"
+    "populacao_escolaridade": "0011697"
 }
-REGIOES = {
-    "11": "Norte",
-    "16": "Centro",
-    "17": "AreaMetropolitanaLisboa",
-    "18": "Alentejo",
-    "15": "Algarve",
-    "20": "Acores",
-    "30": "Madeira"
-}
+df_ine_lisboa = get_lisbon_district_full_structure()
+df_conselho_lisboa = df_ine_lisboa[['codigoine', 'concelho']].drop_duplicates()
+dict_concelhos = df_conselho_lisboa.set_index('codigoine')['concelho'].to_dict()
 
 for nome, codigo in indicadores.items():
     print(f"--- Processando: {nome} (Código: {codigo}) ---")
 
     buffer_dados = []
     # Itera sobre cada região para baixar pedaço por pedaço
-    for cod_regiao, nome_regiao in REGIOES.items():
+    for cod_regiao, nome_regiao in dict_concelhos.items():
         print(f"   -> Baixando {nome_regiao}...")
         df_temp = get_ine_data_api(codigo, cod_regiao)
 

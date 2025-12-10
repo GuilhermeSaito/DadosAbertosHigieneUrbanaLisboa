@@ -113,10 +113,11 @@ def get_lisbon_district_full_structure():
         print(f"Erro crítico: {e}")
         return None
 
-df_distrito_completo = get_lisbon_district_full_structure()
+if __name__ == "__main__":
+    df_distrito_completo = get_lisbon_district_full_structure()
 
-if df_distrito_completo is not None:
-    output_path = os.path.join("..", "..", "dados", "bronze", "geoapi_distrito_lisboa.csv")
-    
-    df_distrito_completo.to_csv(output_path, index=False, encoding='utf-8-sig')
-    print(f"Arquivo salvo em: {output_path}")
+    if df_distrito_completo is not None:
+        output_path = os.path.join("..", "..", "dados", "bronze", "geoapi_distrito_lisboa.csv")
+        
+        df_distrito_completo.to_csv(output_path, index=False, encoding='utf-8-sig')
+        print(f"Arquivo salvo em: {output_path}")
