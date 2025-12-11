@@ -1,0 +1,102 @@
+import duckdb
+import os
+import unicodedata
+
+def criar_dim_geografia_duckdb():
+    # --- Configuração de Caminhos ---
+    base_raw = os.path.join("..", "..", "dados", "bronze")
+    base_silver = os.path.join("..", "..", "dados", "prata")
+    
+    # Arquivos de entrada
+    file_geo = os.path.join(base_raw, "geoapi_distrito_lisboa_completo.csv")
+    file_demo = os.path.join(base_raw, "ine_demografia_freguesias.csv")
+    
+    # Arquivo de saída
+    output_file = os.path.join(base_silver, "dim_geografia.csv")
+
+    if not os.path.exists(base_silver):
+        os.makedirs(base_silver, exist_ok=True)
+
+    # --- 1. Iniciar Conexão DuckDB em Memória ---
+    con = duckdb.connect(database=':memory:')
+
+    # --- 2. Registrar Função de Limpeza (UDF) ---
+    # O SQL nativo às vezes complica com acentos. 
+    # O DuckDB permite usar uma função Python dentro do SQL!
+    def normalize_txt(text):
+        if text is None: return ""
+        # Remove acentos e joga para maiúsculo
+        txt = str(text).upper()
+        return ''.join(c for c in unicodedata.normalize('NFD', txt) if unicodedata.category(c) != 'Mn')
+
+    # Registra a função para ser usada no SQL como 'clean_text(coluna)'
+    con.create_function("clean_text", normalize_txt)
+
+    print("--- Transformação Silver: dim_geografia (DuckDB) ---")
+
+    # --- 3. A Query de Transformação ---
+    # Note como o SQL torna a lógica de negócio muito clara.
+    # Usamos read_csv_auto para ler os arquivos raw.
+    query = f"""
+    -- Selecionamos dados da tabela administrativa (GeoAPI)
+    WITH raw_geo AS (
+        SELECT * FROM read_csv_auto('{file_geo}')
+    ),
+    -- Selecionamos dados demográficos (INE)
+    raw_demo AS (
+        SELECT * FROM read_csv_auto('{file_demo}')
+    )
+
+    SELECT 
+        -- Identificadores
+        geo.codigoine,
+        UPPER(geo.distrito) AS distrito,
+        UPPER(geo.concelho) AS concelho,
+        geo.freguesia AS freguesia_original, -- Mantemos o nome bonito para exibição
+        
+        -- Chaves de Join padronizadas (Opcional, útil para debug)
+        clean_text(geo.concelho) AS _join_concelho,
+        clean_text(geo.freguesia) AS _join_freguesia,
+
+        -- Métricas Demográficas (Tratamento de Nulos com COALESCE)
+        COALESCE(demo.populacao_residente, 0)::INTEGER AS populacao_residente,
+        COALESCE(demo.area_km2, 0)::FLOAT AS area_km2,
+        
+        -- Recálculo da densidade para garantir precisão
+        CASE 
+            WHEN demo.area_km2 > 0 THEN ROUND(demo.populacao_residente / demo.area_km2, 2)
+            ELSE 0 
+        END AS densidade_pop_km2
+
+    FROM raw_geo AS geo
+    -- Left Join: Queremos todas as freguesias administrativas, mesmo se não tivermos dados do INE
+    LEFT JOIN raw_demo AS demo 
+        ON clean_text(geo.concelho) = clean_text(demo.concelho)
+        AND clean_text(geo.freguesia) = clean_text(demo.freguesia)
+    
+    ORDER BY geo.concelho, geo.freguesia;
+    """
+
+    # --- 4. Executar e Salvar (COPY TO) ---
+    try:
+        # Executa a query e salva diretamente em CSV
+        con.sql(f"COPY ({query}) TO '{output_file}' (HEADER, DELIMITER ',')")
+        
+        # Validação simples
+        count = con.sql(f"SELECT COUNT(*) FROM '{output_file}'").fetchone()[0]
+        
+        print(f"✅ Sucesso! Arquivo gerado: {output_file}")
+        print(f"📊 Total de registros processados: {count}")
+        
+        # Mostra uma prévia no terminal
+        print("\nPrévia dos dados (SQL):")
+        con.sql(f"SELECT concelho, freguesia_original, populacao_residente FROM '{output_file}' LIMIT 5").show()
+
+    except Exception as e:
+        print(f"❌ Erro na transformação DuckDB: {e}")
+    
+    finally:
+        con.close()
+
+# Executar
+criar_dim_geografia_duckdb()
