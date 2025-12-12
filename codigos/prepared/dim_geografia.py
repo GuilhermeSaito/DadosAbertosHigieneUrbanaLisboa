@@ -141,7 +141,7 @@ meteo_path = os.path.join(BRONZE_PATH, "open_meteo_distrito_lisboa.csv")
 con.execute(f"""
     CREATE OR REPLACE TABLE silver_fact_meteo AS
     SELECT
-        CAST(datetime AS DATE) as data_hora,
+        CAST(datetime AS DATE) as data_referencia,
         concelho,
         temperatura_c,
         chuva_mm,
