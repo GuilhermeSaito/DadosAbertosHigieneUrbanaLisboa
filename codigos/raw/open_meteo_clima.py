@@ -102,7 +102,7 @@ def main_meteo_distributed():
                 all_weather_dfs.append(df_concelho)
                 print(f"   -> {len(df_concelho)} registos meteorológicos baixados.")
         else:
-            print(f"   -> ❌ Coordenadas não encontradas.")
+            print(f"   -> Coordenadas não encontradas.")
 
     # 3. Consolidar e Salvar
     if all_weather_dfs:
