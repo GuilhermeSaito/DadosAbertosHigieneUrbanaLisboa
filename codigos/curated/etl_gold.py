@@ -2,8 +2,8 @@ import duckdb
 import os
 
 # Caminhos
-SILVER_PATH = os.path.join("..", "..", "dados", "silver")
-GOLD_PATH = os.path.join("..", "..", "dados", "gold")
+SILVER_PATH = os.path.join("..", "..", "dados", "prata")
+GOLD_PATH = os.path.join("..", "..", "dados", "ouro")
 
 # Garante que a pasta gold existe
 os.makedirs(GOLD_PATH, exist_ok=True)
