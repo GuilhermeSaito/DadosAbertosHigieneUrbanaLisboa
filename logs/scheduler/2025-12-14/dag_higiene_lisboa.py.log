@@ -1,0 +1,284 @@
+[2025-12-14T00:04:59.043+0000] {processor.py:161} INFO - Started process (PID=173) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:04:59.044+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:04:59.045+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:04:59.045+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:04:59.066+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:04:59.302+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:04:59.301+0000] {override.py:1829} INFO - Created Permission View: can delete on DAG:higiene_urbana_lisboa_etl
+[2025-12-14T00:04:59.310+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:04:59.309+0000] {override.py:1829} INFO - Created Permission View: can read on DAG:higiene_urbana_lisboa_etl
+[2025-12-14T00:04:59.315+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:04:59.314+0000] {override.py:1829} INFO - Created Permission View: can edit on DAG:higiene_urbana_lisboa_etl
+[2025-12-14T00:04:59.315+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:04:59.315+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:04:59.324+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:04:59.324+0000] {dag.py:3118} INFO - Creating ORM DAG for higiene_urbana_lisboa_etl
+[2025-12-14T00:04:59.333+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:04:59.332+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-13 00:00:00+00:00, run_after=2025-12-14 00:00:00+00:00
+[2025-12-14T00:04:59.345+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.306 seconds
+[2025-12-14T00:05:29.505+0000] {processor.py:161} INFO - Started process (PID=178) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:05:29.513+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:05:29.516+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:05:29.516+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:05:29.530+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:05:29.562+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:05:29.562+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:05:29.589+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:05:29.589+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-13 00:00:00+00:00, run_after=2025-12-14 00:00:00+00:00
+[2025-12-14T00:05:29.613+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.114 seconds
+[2025-12-14T00:05:59.657+0000] {processor.py:161} INFO - Started process (PID=183) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:05:59.664+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:05:59.666+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:05:59.666+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:05:59.682+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:05:59.723+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:05:59.722+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:05:59.752+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:05:59.752+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-13 00:00:00+00:00, run_after=2025-12-14 00:00:00+00:00
+[2025-12-14T00:05:59.778+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.128 seconds
+[2025-12-14T00:06:29.927+0000] {processor.py:161} INFO - Started process (PID=188) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:06:30.841+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:06:30.843+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:06:30.843+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:06:30.859+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:06:30.894+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:06:30.893+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:06:30.921+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:06:30.921+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-13 00:00:00+00:00, run_after=2025-12-14 00:00:00+00:00
+[2025-12-14T00:06:30.946+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 1.027 seconds
+[2025-12-14T00:07:01.106+0000] {processor.py:161} INFO - Started process (PID=193) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:07:01.113+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:07:01.115+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:07:01.115+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:07:01.130+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:07:01.165+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:07:01.164+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:07:01.194+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:07:01.194+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-13 00:00:00+00:00, run_after=2025-12-14 00:00:00+00:00
+[2025-12-14T00:07:01.218+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.119 seconds
+[2025-12-14T00:07:31.267+0000] {processor.py:161} INFO - Started process (PID=198) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:07:31.268+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:07:31.269+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:07:31.269+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:07:31.283+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:07:31.317+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:07:31.317+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:07:31.369+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:07:31.369+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-13 00:00:00+00:00, run_after=2025-12-14 00:00:00+00:00
+[2025-12-14T00:07:31.390+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.130 seconds
+[2025-12-14T00:08:01.515+0000] {processor.py:161} INFO - Started process (PID=203) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:08:03.823+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:08:03.827+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:08:03.826+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:08:03.844+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:08:04.013+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:08:04.013+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:08:04.049+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:08:04.049+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-13 00:00:00+00:00, run_after=2025-12-14 00:00:00+00:00
+[2025-12-14T00:08:04.079+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 2.570 seconds
+[2025-12-14T00:08:34.263+0000] {processor.py:161} INFO - Started process (PID=208) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:08:34.273+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:08:34.276+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:08:34.275+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:08:34.291+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:08:34.329+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:08:34.328+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:08:34.357+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:08:34.357+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-13 00:00:00+00:00, run_after=2025-12-14 00:00:00+00:00
+[2025-12-14T00:08:34.384+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.127 seconds
+[2025-12-14T00:09:04.543+0000] {processor.py:161} INFO - Started process (PID=213) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:09:04.550+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:09:04.552+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:09:04.552+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:09:04.566+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:09:04.598+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:09:04.598+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:09:04.624+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:09:04.624+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-13 00:00:00+00:00, run_after=2025-12-14 00:00:00+00:00
+[2025-12-14T00:09:04.651+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.114 seconds
+[2025-12-14T00:09:34.700+0000] {processor.py:161} INFO - Started process (PID=218) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:09:34.707+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:09:34.710+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:09:34.709+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:09:34.725+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:09:34.763+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:09:34.763+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:09:34.794+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:09:34.794+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-13 00:00:00+00:00, run_after=2025-12-14 00:00:00+00:00
+[2025-12-14T00:09:34.823+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.130 seconds
+[2025-12-14T00:10:04.980+0000] {processor.py:161} INFO - Started process (PID=223) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:10:04.987+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:10:04.990+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:10:04.990+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:10:05.006+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:10:05.043+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:10:05.043+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:10:05.075+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:10:05.075+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-13 00:00:00+00:00, run_after=2025-12-14 00:00:00+00:00
+[2025-12-14T00:10:05.103+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.130 seconds
+[2025-12-14T00:10:36.275+0000] {processor.py:161} INFO - Started process (PID=456) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:10:37.014+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:10:37.019+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:10:37.016+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:10:37.816+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:10:37.852+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:10:37.852+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:10:37.880+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:10:37.879+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:10:37.901+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 1.632 seconds
+[2025-12-14T00:11:08.085+0000] {processor.py:161} INFO - Started process (PID=461) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:11:08.108+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:11:08.110+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:11:08.110+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:11:08.125+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:11:08.160+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:11:08.160+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:11:08.186+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:11:08.186+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:11:08.210+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.132 seconds
+[2025-12-14T00:11:38.373+0000] {processor.py:161} INFO - Started process (PID=466) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:11:38.380+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:11:38.383+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:11:38.382+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:11:38.397+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:11:38.434+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:11:38.433+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:11:38.463+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:11:38.463+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:11:38.490+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.124 seconds
+[2025-12-14T00:12:08.650+0000] {processor.py:161} INFO - Started process (PID=474) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:12:08.651+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:12:08.652+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:12:08.652+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:12:08.665+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:12:08.699+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:12:08.698+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:12:08.725+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:12:08.725+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:12:08.750+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.107 seconds
+[2025-12-14T00:12:38.797+0000] {processor.py:161} INFO - Started process (PID=482) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:12:38.798+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:12:38.800+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:12:38.800+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:12:38.815+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:12:38.853+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:12:38.853+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:12:38.881+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:12:38.881+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:12:38.902+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.112 seconds
+[2025-12-14T00:13:09.036+0000] {processor.py:161} INFO - Started process (PID=487) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:13:09.043+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:13:09.045+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:13:09.045+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:13:09.058+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:13:09.089+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:13:09.089+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:13:09.117+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:13:09.117+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:13:09.140+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.109 seconds
+[2025-12-14T00:13:39.185+0000] {processor.py:161} INFO - Started process (PID=492) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:13:39.185+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:13:39.187+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:13:39.187+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:13:39.200+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:13:39.232+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:13:39.232+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:13:39.259+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:13:39.258+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:13:39.282+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.104 seconds
+[2025-12-14T00:14:09.431+0000] {processor.py:161} INFO - Started process (PID=497) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:14:09.437+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:14:09.440+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:14:09.440+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:14:09.453+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:14:09.485+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:14:09.484+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:14:09.511+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:14:09.511+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:14:09.534+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.110 seconds
+[2025-12-14T00:14:39.576+0000] {processor.py:161} INFO - Started process (PID=502) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:14:39.577+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:14:39.579+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:14:39.579+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:14:39.593+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:14:39.626+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:14:39.626+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:14:39.654+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:14:39.653+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:14:39.674+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.104 seconds
+[2025-12-14T00:15:09.850+0000] {processor.py:161} INFO - Started process (PID=507) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:15:09.857+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:15:09.860+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:15:09.859+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:15:09.874+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:15:09.909+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:15:09.908+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:15:09.935+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:15:09.934+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:15:09.961+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.117 seconds
+[2025-12-14T00:15:40.014+0000] {processor.py:161} INFO - Started process (PID=512) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:15:40.015+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:15:40.017+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:15:40.017+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:15:40.033+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:15:40.071+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:15:40.071+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:15:40.103+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:15:40.103+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:15:40.129+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.122 seconds
+[2025-12-14T00:16:10.286+0000] {processor.py:161} INFO - Started process (PID=517) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:16:10.293+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:16:10.295+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:16:10.295+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:16:10.310+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:16:10.348+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:16:10.347+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:16:10.378+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:16:10.377+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:16:10.404+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.125 seconds
+[2025-12-14T00:16:40.453+0000] {processor.py:161} INFO - Started process (PID=522) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:16:40.454+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:16:40.456+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:16:40.455+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:16:40.471+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:16:40.508+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:16:40.508+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:16:40.538+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:16:40.538+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:16:40.564+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.118 seconds
+[2025-12-14T00:17:10.720+0000] {processor.py:161} INFO - Started process (PID=530) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:17:10.727+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:17:10.729+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:17:10.729+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:17:10.745+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:17:10.782+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:17:10.782+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:17:10.812+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:17:10.812+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:17:10.839+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.126 seconds
+[2025-12-14T00:17:40.891+0000] {processor.py:161} INFO - Started process (PID=538) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:17:40.892+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:17:40.894+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:17:40.894+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:17:40.910+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:17:40.948+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:17:40.948+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:17:40.977+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:17:40.977+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:17:41.004+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.121 seconds
+[2025-12-14T00:18:11.172+0000] {processor.py:161} INFO - Started process (PID=543) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:18:11.179+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:18:11.182+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:18:11.181+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:18:11.196+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:18:11.233+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:18:11.232+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:18:11.261+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:18:11.261+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:18:11.290+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.125 seconds
+[2025-12-14T00:18:41.346+0000] {processor.py:161} INFO - Started process (PID=548) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:18:41.347+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:18:41.349+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:18:41.349+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:18:41.364+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:18:41.401+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:18:41.400+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:18:41.431+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:18:41.431+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:18:41.458+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.119 seconds
+[2025-12-14T00:19:11.627+0000] {processor.py:161} INFO - Started process (PID=553) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:19:11.634+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:19:11.636+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:19:11.636+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:19:11.651+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:19:11.688+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:19:11.687+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:19:11.718+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:19:11.717+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:19:11.745+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.124 seconds
+[2025-12-14T00:19:41.802+0000] {processor.py:161} INFO - Started process (PID=558) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:19:41.803+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:19:41.805+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:19:41.805+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:19:41.820+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:19:41.861+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:19:41.860+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:19:41.891+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:19:41.891+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:19:41.920+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.125 seconds
+[2025-12-14T00:20:12.960+0000] {processor.py:161} INFO - Started process (PID=658) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:20:44.592+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:20:44.596+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:20:44.595+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:20:44.627+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:20:44.684+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:20:44.684+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:20:44.722+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:20:44.721+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:20:44.755+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 31.802 seconds
+[2025-12-14T00:21:14.931+0000] {processor.py:161} INFO - Started process (PID=682) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:21:14.938+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:21:14.941+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:21:14.940+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:21:14.954+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:21:14.988+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:21:14.988+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:21:15.015+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:21:15.014+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:21:15.038+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.113 seconds
+[2025-12-14T00:21:45.081+0000] {processor.py:161} INFO - Started process (PID=687) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:21:45.088+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:21:45.091+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:21:45.091+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:21:45.106+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:21:45.143+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:21:45.143+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:21:45.172+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:21:45.172+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:21:45.201+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.127 seconds
+[2025-12-14T00:22:15.346+0000] {processor.py:161} INFO - Started process (PID=692) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:22:15.353+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:22:15.356+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:22:15.355+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:22:15.369+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:22:15.401+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:22:15.401+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:22:15.428+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:22:15.427+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:22:15.448+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.108 seconds
+[2025-12-14T00:22:45.521+0000] {processor.py:161} INFO - Started process (PID=697) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:22:45.523+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:22:45.524+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:22:45.524+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:22:45.539+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:22:45.578+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:22:45.578+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:22:45.609+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:22:45.608+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:22:45.633+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.119 seconds
+[2025-12-14T00:23:15.776+0000] {processor.py:161} INFO - Started process (PID=702) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:23:15.783+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:23:15.786+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:23:15.785+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:23:15.800+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:23:15.836+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:23:15.836+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:23:15.865+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:23:15.865+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:23:15.890+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.122 seconds
+[2025-12-14T00:23:45.946+0000] {processor.py:161} INFO - Started process (PID=707) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:23:45.947+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:23:45.948+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:23:45.948+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:23:45.963+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:23:46.000+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:23:46.000+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:23:46.029+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:23:46.029+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:23:46.055+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.116 seconds
+[2025-12-14T00:24:16.206+0000] {processor.py:161} INFO - Started process (PID=712) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:24:16.213+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:24:16.216+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:24:16.216+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:24:16.232+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:24:16.269+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:24:16.269+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:24:16.299+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:24:16.299+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:24:16.328+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.129 seconds
+[2025-12-14T00:24:46.377+0000] {processor.py:161} INFO - Started process (PID=717) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:24:46.378+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:24:46.380+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:24:46.380+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:24:46.396+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:24:46.431+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:24:46.431+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:24:46.462+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:24:46.461+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:24:46.491+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.120 seconds
+[2025-12-14T00:25:16.659+0000] {processor.py:161} INFO - Started process (PID=722) to work on /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:25:16.665+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/dag_higiene_lisboa.py for tasks to queue
+[2025-12-14T00:25:16.668+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:25:16.667+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:25:16.683+0000] {processor.py:840} INFO - DAG(s) 'higiene_urbana_lisboa_etl' retrieved from /opt/airflow/dags/dag_higiene_lisboa.py
+[2025-12-14T00:25:16.719+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:25:16.718+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2025-12-14T00:25:16.749+0000] {logging_mixin.py:188} INFO - [2025-12-14T00:25:16.748+0000] {dag.py:3954} INFO - Setting next_dagrun for higiene_urbana_lisboa_etl to 2025-12-14 00:00:00+00:00, run_after=2025-12-15 00:00:00+00:00
+[2025-12-14T00:25:16.773+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/dag_higiene_lisboa.py took 0.121 seconds

@@ -1,0 +1,28 @@
+[2025-12-14T00:10:06.315+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-14T00:10:06.375+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.bronze_ocorrencias scheduled__2025-12-13T00:00:00+00:00 [queued]>
+[2025-12-14T00:10:06.394+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.bronze_ocorrencias scheduled__2025-12-13T00:00:00+00:00 [queued]>
+[2025-12-14T00:10:06.395+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-12-14T00:10:06.420+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): bronze_ocorrencias> on 2025-12-13 00:00:00+00:00
+[2025-12-14T00:10:06.446+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=230) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-14T00:10:06.449+0000] {standard_task_runner.py:63} INFO - Started process 242 to run task
+[2025-12-14T00:10:06.445+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'higiene_urbana_lisboa_etl', 'bronze_ocorrencias', 'scheduled__2025-12-13T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/dag_higiene_lisboa.py', '--cfg-path', '/tmp/tmpxd3a481o']
+[2025-12-14T00:10:06.451+0000] {standard_task_runner.py:91} INFO - Job 11: Subtask bronze_ocorrencias
+[2025-12-14T00:10:06.500+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-12-14T00:10:08.015+0000] {task_command.py:426} INFO - Running <TaskInstance: higiene_urbana_lisboa_etl.bronze_ocorrencias scheduled__2025-12-13T00:00:00+00:00 [running]> on host 0c779bd56b36
+[2025-12-14T00:10:08.191+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='grupo10' AIRFLOW_CTX_DAG_ID='higiene_urbana_lisboa_etl' AIRFLOW_CTX_TASK_ID='bronze_ocorrencias' AIRFLOW_CTX_EXECUTION_DATE='2025-12-13T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-13T00:00:00+00:00'
+[2025-12-14T00:10:08.192+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-14T00:10:08.222+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-14T00:10:08.223+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python ocorrencias_minha_rua.py']
+[2025-12-14T00:10:08.249+0000] {subprocess.py:86} INFO - Output:
+[2025-12-14T00:10:40.477+0000] {subprocess.py:93} INFO - Consultando API do Lisboa Aberta para: ocorrencias-na-minha-rua...
+[2025-12-14T00:10:42.472+0000] {subprocess.py:93} INFO - Recurso encontrado: Ocorrências 2025 - 1 Semestre (Formato: XLSX)
+[2025-12-14T00:10:42.472+0000] {subprocess.py:93} INFO - Baixando arquivo de: https://dados.cm-lisboa.pt/dataset/fe6c4ef5-c021-48d0-9d1b-d4388769e3be/resource/6434e62b-eb7d-4d2c-95d8-a19bc8bd1755/download/ocorrencias-2025-1-semestre.xlsx ...
+[2025-12-14T00:10:42.473+0000] {subprocess.py:93} INFO - Processando arquivo (isso pode demorar dependendo do tamanho)...
+[2025-12-14T00:10:42.473+0000] {subprocess.py:93} INFO - Sucesso! 67336 ocorrências carregadas.
+[2025-12-14T00:10:42.473+0000] {subprocess.py:93} INFO - Arquivo salvo em: ../../dados/bronze/ocorrencias_minha_rua.csv
+[2025-12-14T00:10:42.473+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-14T00:10:42.474+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-14T00:10:42.508+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=higiene_urbana_lisboa_etl, task_id=bronze_ocorrencias, run_id=scheduled__2025-12-13T00:00:00+00:00, execution_date=20251213T000000, start_date=20251214T001006, end_date=20251214T001042
+[2025-12-14T00:10:42.539+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-12-14T00:10:42.567+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-14T00:10:42.569+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

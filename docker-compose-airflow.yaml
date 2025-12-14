@@ -1,0 +1,71 @@
+version: '3.8'
+
+x-airflow-common:
+  &airflow-common
+  build: .  # Usa o Dockerfile que criamos acima
+  environment:
+    &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor # Simples para projetos locais
+    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false' # Não carrega exemplos inúteis
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./codigos:/opt/airflow/codigos  # Mapeia seus scripts
+    - ./dados:/opt/airflow/dados      # Mapeia seus dados (Data Lake)
+    - ./logs:/opt/airflow/logs
+  user: "${AIRFLOW_UID:-50000}:0"
+  depends_on:
+    &airflow-common-depends-on
+    postgres:
+      condition: service_healthy
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 5
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
+
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - "8081:8080"
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-init:
+    <<: *airflow-common
+    command: version
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_UPGRADE: 'true'
+      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-admin}
+      _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-admin}
+
+volumes:
+  postgres-db-volume:
