@@ -1,0 +1,40 @@
+[2025-12-15T10:46:08.987+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-15T10:46:09.025+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.gold_analytics manual__2025-12-15T10:42:09.264240+00:00 [queued]>
+[2025-12-15T10:46:09.036+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.gold_analytics manual__2025-12-15T10:42:09.264240+00:00 [queued]>
+[2025-12-15T10:46:09.036+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-12-15T10:46:09.051+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): gold_analytics> on 2025-12-15 10:42:09.264240+00:00
+[2025-12-15T10:46:09.062+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=632) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-15T10:46:09.063+0000] {standard_task_runner.py:63} INFO - Started process 633 to run task
+[2025-12-15T10:46:09.062+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'higiene_urbana_lisboa_etl', 'gold_analytics', 'manual__2025-12-15T10:42:09.264240+00:00', '--job-id', '94', '--raw', '--subdir', 'DAGS_FOLDER/dag_higiene_lisboa.py', '--cfg-path', '/tmp/tmpm2mngfgj']
+[2025-12-15T10:46:09.064+0000] {standard_task_runner.py:91} INFO - Job 94: Subtask gold_analytics
+[2025-12-15T10:46:09.079+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-12-15T10:46:09.115+0000] {task_command.py:426} INFO - Running <TaskInstance: higiene_urbana_lisboa_etl.gold_analytics manual__2025-12-15T10:42:09.264240+00:00 [running]> on host 8216b447db0d
+[2025-12-15T10:46:09.215+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='grupo10' AIRFLOW_CTX_DAG_ID='higiene_urbana_lisboa_etl' AIRFLOW_CTX_TASK_ID='gold_analytics' AIRFLOW_CTX_EXECUTION_DATE='2025-12-15T10:42:09.264240+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-15T10:42:09.264240+00:00'
+[2025-12-15T10:46:09.216+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-15T10:46:09.233+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-15T10:46:09.233+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python etl_gold.py']
+[2025-12-15T10:46:09.250+0000] {subprocess.py:86} INFO - Output:
+[2025-12-15T10:46:11.731+0000] {subprocess.py:93} INFO - --- INICIANDO PROCESSAMENTO CAMADA OURO (DUCKDB) ---
+[2025-12-15T10:46:11.731+0000] {subprocess.py:93} INFO - Gerando: Dimensão Calendário...
+[2025-12-15T10:46:11.732+0000] {subprocess.py:93} INFO - Agregando: Infraestrutura CML por Freguesia...
+[2025-12-15T10:46:11.732+0000] {subprocess.py:93} INFO - Agregando: Ocorrências Diárias...
+[2025-12-15T10:46:11.733+0000] {subprocess.py:93} INFO - Agregando: Meteorologia Diária...
+[2025-12-15T10:46:11.733+0000] {subprocess.py:93} INFO - Construindo: gold_fact_analise_diaria (O Tabelão Final)...
+[2025-12-15T10:46:11.733+0000] {subprocess.py:93} INFO -  -> Tabela 'gold_fact_analise_diaria' criada com sucesso!
+[2025-12-15T10:46:11.733+0000] {subprocess.py:93} INFO -  -> Arquivo final exportado para: ../../dados/ouro/tabela_analitica_final.parquet
+[2025-12-15T10:46:11.734+0000] {subprocess.py:93} INFO - 
+[2025-12-15T10:46:11.734+0000] {subprocess.py:93} INFO - --- AMOSTRA DOS DADOS (TOP 5) ---
+[2025-12-15T10:46:11.734+0000] {subprocess.py:93} INFO -   data_referencia  freguesia  num_ecopontos  total_queixas_diarias
+[2025-12-15T10:46:11.734+0000] {subprocess.py:93} INFO - 0      2025-06-30      Ajuda              3                     12
+[2025-12-15T10:46:11.734+0000] {subprocess.py:93} INFO - 1      2025-06-30  Alcântara              5                     21
+[2025-12-15T10:46:11.734+0000] {subprocess.py:93} INFO - 2      2025-06-30   Alvalade              0                     41
+[2025-12-15T10:46:11.735+0000] {subprocess.py:93} INFO - 3      2025-06-30    Areeiro              1                     22
+[2025-12-15T10:46:11.735+0000] {subprocess.py:93} INFO - 4      2025-06-30    Arroios              7                     51
+[2025-12-15T10:46:11.735+0000] {subprocess.py:93} INFO - 
+[2025-12-15T10:46:11.735+0000] {subprocess.py:93} INFO - Processamento Gold concluído!
+[2025-12-15T10:46:11.836+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-15T10:46:11.837+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-15T10:46:11.875+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=higiene_urbana_lisboa_etl, task_id=gold_analytics, run_id=manual__2025-12-15T10:42:09.264240+00:00, execution_date=20251215T104209, start_date=20251215T104609, end_date=20251215T104611
+[2025-12-15T10:46:11.930+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-12-15T10:46:11.953+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-15T10:46:11.955+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

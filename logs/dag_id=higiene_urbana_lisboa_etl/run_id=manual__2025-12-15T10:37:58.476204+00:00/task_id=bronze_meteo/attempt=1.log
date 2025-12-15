@@ -1,0 +1,24 @@
+[2025-12-15T10:38:15.033+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-15T10:38:15.078+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.bronze_meteo manual__2025-12-15T10:37:58.476204+00:00 [queued]>
+[2025-12-15T10:38:15.091+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.bronze_meteo manual__2025-12-15T10:37:58.476204+00:00 [queued]>
+[2025-12-15T10:38:15.091+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-12-15T10:38:15.112+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): bronze_meteo> on 2025-12-15 10:37:58.476204+00:00
+[2025-12-15T10:38:15.126+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=273) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-15T10:38:15.128+0000] {standard_task_runner.py:63} INFO - Started process 275 to run task
+[2025-12-15T10:38:15.127+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'higiene_urbana_lisboa_etl', 'bronze_meteo', 'manual__2025-12-15T10:37:58.476204+00:00', '--job-id', '84', '--raw', '--subdir', 'DAGS_FOLDER/dag_higiene_lisboa.py', '--cfg-path', '/tmp/tmp5bxv9spf']
+[2025-12-15T10:38:15.129+0000] {standard_task_runner.py:91} INFO - Job 84: Subtask bronze_meteo
+[2025-12-15T10:38:15.147+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-12-15T10:38:15.194+0000] {task_command.py:426} INFO - Running <TaskInstance: higiene_urbana_lisboa_etl.bronze_meteo manual__2025-12-15T10:37:58.476204+00:00 [running]> on host 8216b447db0d
+[2025-12-15T10:38:15.318+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='grupo10' AIRFLOW_CTX_DAG_ID='higiene_urbana_lisboa_etl' AIRFLOW_CTX_TASK_ID='bronze_meteo' AIRFLOW_CTX_EXECUTION_DATE='2025-12-15T10:37:58.476204+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-15T10:37:58.476204+00:00'
+[2025-12-15T10:38:15.319+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-15T10:38:15.339+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-15T10:38:15.340+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python open_meteo_clima.py']
+[2025-12-15T10:38:15.356+0000] {subprocess.py:86} INFO - Output:
+[2025-12-15T10:38:33.211+0000] {subprocess.py:93} INFO - Salvando no MinIO (s3://bronze/open_meteo_distrito_lisboa.csv)...
+[2025-12-15T10:38:33.211+0000] {subprocess.py:93} INFO - Upload concluído com sucesso!
+[2025-12-15T10:38:33.741+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-15T10:38:33.741+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-15T10:38:33.778+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=higiene_urbana_lisboa_etl, task_id=bronze_meteo, run_id=manual__2025-12-15T10:37:58.476204+00:00, execution_date=20251215T103758, start_date=20251215T103815, end_date=20251215T103833
+[2025-12-15T10:38:33.841+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-12-15T10:38:33.873+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-15T10:38:33.875+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,6 +1,7 @@
 import requests
 import pandas as pd
 import os
+from geoapi_freguesias import salvar_no_minio
 
 def get_osm_ecopontos():
     url = "https://overpass-api.de/api/interpreter"
@@ -57,11 +58,15 @@ def get_osm_ecopontos():
         print(f"Erro na requisição: {e}")
         return None
 
-df_osm = get_osm_ecopontos()
+geo_df_path = os.path.join("..", "..", "dados", "bronze", "osm_ecopontos.csv")
+df_osm = pd.read_csv(geo_df_path)
+
+# df_osm = get_osm_ecopontos()
 
 if df_osm is not None:
-    output_path = os.path.join("..", "..", "dados", "bronze", "osm_ecopontos.csv")
+    # output_path = os.path.join("..", "..", "dados", "bronze", "osm_ecopontos.csv")
     
-    # Salvar em CSV
-    df_osm.to_csv(output_path, index=False, encoding='utf-8-sig')
-    print(f"Arquivo salvo em: {output_path}")
+    # # Salvar em CSV
+    # df_osm.to_csv(output_path, index=False, encoding='utf-8-sig')
+    # print(f"Arquivo salvo em: {output_path}")
+    salvar_no_minio(df_osm, "osm_ecopontos.csv")

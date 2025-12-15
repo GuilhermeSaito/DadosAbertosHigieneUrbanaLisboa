@@ -1,0 +1,48 @@
+[2025-12-14T14:04:47.794+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-14T14:04:47.820+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.gold_analytics manual__2025-12-14T13:59:12.836121+00:00 [queued]>
+[2025-12-14T14:04:47.828+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.gold_analytics manual__2025-12-14T13:59:12.836121+00:00 [queued]>
+[2025-12-14T14:04:47.828+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-12-14T14:04:47.839+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): gold_analytics> on 2025-12-14 13:59:12.836121+00:00
+[2025-12-14T14:04:47.847+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=666) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-14T14:04:47.848+0000] {standard_task_runner.py:63} INFO - Started process 667 to run task
+[2025-12-14T14:04:47.847+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'higiene_urbana_lisboa_etl', 'gold_analytics', 'manual__2025-12-14T13:59:12.836121+00:00', '--job-id', '41', '--raw', '--subdir', 'DAGS_FOLDER/dag_higiene_lisboa.py', '--cfg-path', '/tmp/tmp_srttkof']
+[2025-12-14T14:04:47.849+0000] {standard_task_runner.py:91} INFO - Job 41: Subtask gold_analytics
+[2025-12-14T14:04:47.860+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-12-14T14:04:47.891+0000] {task_command.py:426} INFO - Running <TaskInstance: higiene_urbana_lisboa_etl.gold_analytics manual__2025-12-14T13:59:12.836121+00:00 [running]> on host 0c779bd56b36
+[2025-12-14T14:04:47.964+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='grupo10' AIRFLOW_CTX_DAG_ID='higiene_urbana_lisboa_etl' AIRFLOW_CTX_TASK_ID='gold_analytics' AIRFLOW_CTX_EXECUTION_DATE='2025-12-14T13:59:12.836121+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-14T13:59:12.836121+00:00'
+[2025-12-14T14:04:47.965+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-14T14:04:47.977+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-14T14:04:47.977+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python etl_gold.py']
+[2025-12-14T14:04:47.989+0000] {subprocess.py:86} INFO - Output:
+[2025-12-14T14:04:48.470+0000] {subprocess.py:93} INFO - --- INICIANDO PROCESSAMENTO CAMADA OURO (DUCKDB) ---
+[2025-12-14T14:04:48.470+0000] {subprocess.py:93} INFO - Gerando: Dimensão Calendário...
+[2025-12-14T14:04:48.470+0000] {subprocess.py:93} INFO - Agregando: Infraestrutura CML por Freguesia...
+[2025-12-14T14:04:48.471+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-12-14T14:04:48.471+0000] {subprocess.py:93} INFO -   File "/opt/***/codigos/curated/etl_gold.py", line 39, in <module>
+[2025-12-14T14:04:48.471+0000] {subprocess.py:93} INFO -     con.execute("""
+[2025-12-14T14:04:48.471+0000] {subprocess.py:93} INFO - _duckdb.CatalogException: Catalog Error: Table with name silver_dim_ecopontos_cml does not exist!
+[2025-12-14T14:04:48.471+0000] {subprocess.py:93} INFO - Did you mean "sqlite_temp_schema"?
+[2025-12-14T14:04:48.471+0000] {subprocess.py:93} INFO - 
+[2025-12-14T14:04:48.471+0000] {subprocess.py:93} INFO - LINE 8:     FROM silver_dim_ecopontos_cml
+[2025-12-14T14:04:48.471+0000] {subprocess.py:93} INFO -                  ^
+[2025-12-14T14:04:48.503+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-12-14T14:04:48.504+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-14T14:04:48.513+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-14T14:04:48.517+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=higiene_urbana_lisboa_etl, task_id=gold_analytics, run_id=manual__2025-12-14T13:59:12.836121+00:00, execution_date=20251214T135912, start_date=20251214T140447, end_date=20251214T140448
+[2025-12-14T14:04:48.529+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 41 for task gold_analytics (Bash command failed. The command returned a non-zero exit code 1.; 667)
+[2025-12-14T14:04:48.544+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-12-14T14:04:48.562+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-14T14:04:48.563+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

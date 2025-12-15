@@ -112,12 +112,45 @@ def get_lisbon_district_full_structure():
     except Exception as e:
         print(f"Erro crítico: {e}")
         return None
+    
+def salvar_no_minio(df, nome_arquivo):
+    endpoint_url = os.getenv("MINIO_ENDPOINT", "http://minio:9000")
+    access_key = os.getenv("MINIO_ACCESS_KEY", "admin")
+    secret_key = os.getenv("MINIO_SECRET_KEY", "admin12345")
+    bucket_name = "bronze"
+
+    caminho_s3 = f"s3://{bucket_name}/{nome_arquivo}"
+    
+    print(f"Salvando no MinIO ({caminho_s3})...")
+    
+    try:
+        df.to_csv(
+            caminho_s3,
+            index=False,
+            encoding='utf-8-sig',
+            storage_options={
+                "key": access_key,
+                "secret": secret_key,
+                "client_kwargs": {
+                    "endpoint_url": endpoint_url
+                }
+            }
+        )
+        print("Upload concluído com sucesso!")
+    except Exception as e:
+        print(f"ERRO ao salvar no MinIO: {e}")
+        print("Dica: Verifique se o bucket 'bronze' foi criado no painel do MinIO (localhost:9001).")
 
 if __name__ == "__main__":
-    df_distrito_completo = get_lisbon_district_full_structure()
+    geo_df_path = os.path.join("..", "..", "dados", "bronze", "geoapi_distrito_lisboa.csv")
+    df_distrito_completo = pd.read_csv(geo_df_path)
+
+
+    # df_distrito_completo = get_lisbon_district_full_structure()
 
     if df_distrito_completo is not None:
-        output_path = os.path.join("..", "..", "dados", "bronze", "geoapi_distrito_lisboa.csv")
+        # output_path = os.path.join("..", "..", "dados", "bronze", "geoapi_distrito_lisboa.csv")
         
-        df_distrito_completo.to_csv(output_path, index=False, encoding='utf-8-sig')
-        print(f"Arquivo salvo em: {output_path}")
+        # df_distrito_completo.to_csv(output_path, index=False, encoding='utf-8-sig')
+        # print(f"Arquivo salvo em: {output_path}")
+        salvar_no_minio(df_distrito_completo, "geoapi_distrito_lisboa.csv")

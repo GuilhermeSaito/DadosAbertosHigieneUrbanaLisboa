@@ -1,0 +1,23 @@
+[2025-12-15T09:59:20.187+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-15T09:59:20.234+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.bronze_ocorrencias scheduled__2025-12-14T00:00:00+00:00 [queued]>
+[2025-12-15T09:59:20.248+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.bronze_ocorrencias scheduled__2025-12-14T00:00:00+00:00 [queued]>
+[2025-12-15T09:59:20.248+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-12-15T09:59:20.271+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): bronze_ocorrencias> on 2025-12-14 00:00:00+00:00
+[2025-12-15T09:59:20.292+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=182) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-15T09:59:20.291+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'higiene_urbana_lisboa_etl', 'bronze_ocorrencias', 'scheduled__2025-12-14T00:00:00+00:00', '--job-id', '45', '--raw', '--subdir', 'DAGS_FOLDER/dag_higiene_lisboa.py', '--cfg-path', '/tmp/tmp2fru7exu']
+[2025-12-15T09:59:20.293+0000] {standard_task_runner.py:91} INFO - Job 45: Subtask bronze_ocorrencias
+[2025-12-15T09:59:20.293+0000] {standard_task_runner.py:63} INFO - Started process 193 to run task
+[2025-12-15T09:59:20.319+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-12-15T09:59:20.391+0000] {task_command.py:426} INFO - Running <TaskInstance: higiene_urbana_lisboa_etl.bronze_ocorrencias scheduled__2025-12-14T00:00:00+00:00 [running]> on host 72bd56846f67
+[2025-12-15T09:59:20.526+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='grupo10' AIRFLOW_CTX_DAG_ID='higiene_urbana_lisboa_etl' AIRFLOW_CTX_TASK_ID='bronze_ocorrencias' AIRFLOW_CTX_EXECUTION_DATE='2025-12-14T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-14T00:00:00+00:00'
+[2025-12-15T09:59:20.527+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-15T09:59:20.547+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-15T09:59:20.547+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python ocorrencias_minha_rua.py']
+[2025-12-15T09:59:20.567+0000] {subprocess.py:86} INFO - Output:
+[2025-12-15T09:59:31.339+0000] {subprocess.py:93} INFO - Arquivo salvo em: ../../dados/bronze/ocorrencias_minha_rua.csv
+[2025-12-15T09:59:31.453+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-15T09:59:31.454+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-15T09:59:31.480+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=higiene_urbana_lisboa_etl, task_id=bronze_ocorrencias, run_id=scheduled__2025-12-14T00:00:00+00:00, execution_date=20251214T000000, start_date=20251215T095920, end_date=20251215T095931
+[2025-12-15T09:59:31.539+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-12-15T09:59:31.552+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-15T09:59:31.573+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

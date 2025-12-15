@@ -2,7 +2,7 @@ import requests
 import pandas as pd
 import os
 import time
-from geoapi_freguesias import get_lisbon_district_full_structure
+from geoapi_freguesias import get_lisbon_district_full_structure, salvar_no_minio
 
 def get_ine_data_api(codigo_indicador, cod_regiao):
     url = "https://www.ine.pt/ine/json_indicador/pindica.jsp"
@@ -69,24 +69,40 @@ df_ine_lisboa = get_lisbon_district_full_structure()
 df_conselho_lisboa = df_ine_lisboa[['codigoine', 'concelho']].drop_duplicates()
 dict_concelhos = df_conselho_lisboa.set_index('codigoine')['concelho'].to_dict()
 
-for nome, codigo in indicadores.items():
-    print(f"--- Processando: {nome} (Código: {codigo}) ---")
+# for nome, codigo in indicadores.items():
+#     print(f"--- Processando: {nome} (Código: {codigo}) ---")
 
-    buffer_dados = []
-    # Itera sobre cada região para baixar pedaço por pedaço
-    for cod_regiao, nome_regiao in dict_concelhos.items():
-        print(f"   -> Baixando {nome_regiao}...")
-        df_temp = get_ine_data_api(codigo, cod_regiao)
+#     buffer_dados = []
+#     # Itera sobre cada região para baixar pedaço por pedaço
+#     for cod_regiao, nome_regiao in dict_concelhos.items():
+#         print(f"   -> Baixando {nome_regiao}...")
+#         df_temp = get_ine_data_api(codigo, cod_regiao)
 
-        if not df_temp.empty:
-            buffer_dados.append(df_temp)
+#         if not df_temp.empty:
+#             buffer_dados.append(df_temp)
 
-        time.sleep(0.5)
+#         time.sleep(0.5)
 
-    output_path = os.path.join("..", "..", "dados", "bronze", f"{nome}_censo_ine.csv")
-    if buffer_dados:
-        df_resultado = pd.concat(buffer_dados, ignore_index=True)
-        df_resultado.to_csv(output_path, index=False, encoding='utf-8-sig')
-        print(f"Sucesso! Arquivo salvo em: {output_path}")
-    else:
-        print(f"[FALHA] Nenhum dado retornado para {nome}.")
+#     output_path = os.path.join("..", "..", "dados", "bronze", f"{nome}_censo_ine.csv")
+#     if buffer_dados:
+#         df_resultado = pd.concat(buffer_dados, ignore_index=True)
+#         df_resultado.to_csv(output_path, index=False, encoding='utf-8-sig')
+#         print(f"Sucesso! Arquivo salvo em: {output_path}")
+#     else:
+#         print(f"[FALHA] Nenhum dado retornado para {nome}.")
+
+
+path_df_1 = os.path.join("..", "..", "dados", "bronze", "edificios_censo_ine.csv")
+df1 = pd.read_csv(path_df_1)
+df1.to_csv(path_df_1, index=False, encoding='utf-8-sig')
+salvar_no_minio(df1, "edificios_censo_ine.csv")
+
+path_df_2 = os.path.join("..", "..", "dados", "bronze", "populacao_escolaridade_censo_ine.csv")
+df2 = pd.read_csv(path_df_2)
+df2.to_csv(path_df_2, index=False, encoding='utf-8-sig')
+salvar_no_minio(df2, "populacao_escolaridade_censo_ine.csv")
+
+path_df_3 = os.path.join("..", "..", "dados", "bronze", "populacao_idade_sexo_censo_ine.csv")
+df3 = pd.read_csv(path_df_3)
+df3.to_csv(path_df_3, index=False, encoding='utf-8-sig')
+salvar_no_minio(df3, "populacao_idade_sexo_censo_ine.csv")

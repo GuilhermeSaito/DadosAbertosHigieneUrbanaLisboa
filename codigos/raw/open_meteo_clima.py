@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import time
 from datetime import datetime, timedelta
+from geoapi_freguesias import salvar_no_minio
 
 # --- 1. Nova Função de Geocoding (OpenStreetMap) ---
 def get_coords_nominatim(concelho_nome):
@@ -77,45 +78,51 @@ def get_weather_batch(lat, lon, location_name, start_year, end_year):
 # --- Fluxo Principal ---
 
 def main_meteo_distributed():
-    path_geoapi = os.path.join("..", "..", "dados", "bronze", "geoapi_distrito_lisboa.csv")
-    df_geo = pd.read_csv(path_geoapi)
+    # path_geoapi = os.path.join("..", "..", "dados", "bronze", "geoapi_distrito_lisboa.csv")
+    # df_geo = pd.read_csv(path_geoapi)
     
-    lista_concelhos = df_geo['concelho'].dropna().unique()
-    print(f"Iniciando extração para {len(lista_concelhos)} concelhos via Nominatim...")
+    # lista_concelhos = df_geo['concelho'].dropna().unique()
+    # print(f"Iniciando extração para {len(lista_concelhos)} concelhos via Nominatim...")
     
-    all_weather_dfs = []
-    for concelho in lista_concelhos:
-        print(f"\nLocalizando: {concelho}...")
+    # all_weather_dfs = []
+    # for concelho in lista_concelhos:
+    #     print(f"\nLocalizando: {concelho}...")
         
-        lat, lon = get_coords_nominatim(concelho)
-        # Pausa de 1s é importante para respeitar as regras do Nominatim (política de uso)
-        time.sleep(1)
+    #     lat, lon = get_coords_nominatim(concelho)
+    #     # Pausa de 1s é importante para respeitar as regras do Nominatim (política de uso)
+    #     time.sleep(1)
         
-        if lat and lon:
-            print(f"   -> Encontrado: {lat:.4f}, {lon:.4f}")
-            # B. Baixar Clima (2023 a 2025)
-            # Damos mais uma pausa para o Open-Meteo
-            time.sleep(1) 
-            df_concelho = get_weather_batch(lat, lon, concelho, 2023, 2025)
+    #     if lat and lon:
+    #         print(f"   -> Encontrado: {lat:.4f}, {lon:.4f}")
+    #         # B. Baixar Clima (2023 a 2025)
+    #         # Damos mais uma pausa para o Open-Meteo
+    #         time.sleep(1) 
+    #         df_concelho = get_weather_batch(lat, lon, concelho, 2023, 2025)
             
-            if df_concelho is not None:
-                all_weather_dfs.append(df_concelho)
-                print(f"   -> {len(df_concelho)} registos meteorológicos baixados.")
-        else:
-            print(f"   -> Coordenadas não encontradas.")
+    #         if df_concelho is not None:
+    #             all_weather_dfs.append(df_concelho)
+    #             print(f"   -> {len(df_concelho)} registos meteorológicos baixados.")
+    #     else:
+    #         print(f"   -> Coordenadas não encontradas.")
 
-    # 3. Consolidar e Salvar
-    if all_weather_dfs:
-        df_final = pd.concat(all_weather_dfs, ignore_index=True)
+    # # 3. Consolidar e Salvar
+    # if all_weather_dfs:
+    #     df_final = pd.concat(all_weather_dfs, ignore_index=True)
         
-        output_path = os.path.join("..", "..", "dados", "bronze", "open_meteo_distrito_lisboa.csv")    
-        df_final.to_csv(output_path, index=False, encoding='utf-8-sig')
+    #     output_path = os.path.join("..", "..", "dados", "bronze", "open_meteo_distrito_lisboa.csv")    
+    #     df_final.to_csv(output_path, index=False, encoding='utf-8-sig')
         
-        print("\n" + "="*50)
-        print(f"SUCESSO TOTAL! Arquivo salvo em: {output_path}")
-        print(f"Total de linhas: {len(df_final)}")
-    else:
-        print("Nenhum dado foi coletado.")
+    #     print("\n" + "="*50)
+    #     print(f"SUCESSO TOTAL! Arquivo salvo em: {output_path}")
+    #     print(f"Total de linhas: {len(df_final)}")
+    # else:
+    #     print("Nenhum dado foi coletado.")
+
+    geo_df_path = os.path.join("..", "..", "dados", "bronze", "open_meteo_distrito_lisboa.csv")
+    df_ocorrencias = pd.read_csv(geo_df_path)
+    df_ocorrencias.to_csv(geo_df_path, index=False, encoding='utf-8-sig')
+    
+    salvar_no_minio(df_ocorrencias, "open_meteo_distrito_lisboa.csv")
 
 # Executar
 main_meteo_distributed()

@@ -18,13 +18,11 @@ with DAG(
     'higiene_urbana_lisboa_etl',
     default_args=default_args,
     description='Pipeline ELT para Higiene Urbana de Lisboa',
-    schedule_interval='@daily', # Roda todo dia (ajuste conforme necessidade)
+    schedule_interval='@daily',
     catchup=False,
 ) as dag:
 
-    # --- CAMADA BRONZE (Ingestão Paralela) ---
-    # Usamos o parâmetro 'cwd' (Current Working Directory) para garantir 
-    # que o script rode dentro da pasta certa e encontre os caminhos relativos "../dados"
+    # --- CAMADA BRONZE (Ingestão) ---
     
     t_geoapi = BashOperator(
         task_id='bronze_geoapi',
@@ -40,7 +38,7 @@ with DAG(
 
     t_cml_eco = BashOperator(
         task_id='bronze_cml_ecopontos',
-        bash_command='python camara_municipal_lisboa.py', # Esse script baixa ecopontos e rotas
+        bash_command='python camara_municipal_lisboa.py',
         cwd='/opt/airflow/codigos/raw'
     )
 
@@ -65,21 +63,23 @@ with DAG(
     # --- CAMADA PRATA (Tratamento) ---
     t_silver = BashOperator(
         task_id='silver_transformation',
-        bash_command='python etl_silver.py', # Seu script consolidado do DuckDB
+        bash_command='python etl_silver.py',
         cwd='/opt/airflow/codigos/prepared'
     )
 
     # --- CAMADA OURO (Modelagem) ---
     t_gold = BashOperator(
         task_id='gold_analytics',
-        bash_command='python etl_gold.py', # Seu script final
+        bash_command='python etl_gold.py',
         cwd='/opt/airflow/codigos/curated'
     )
 
     # --- ORQUESTRAÇÃO (Dependências) ---
-    # 1. GeoAPI precisa rodar antes do INE (pois o INE usa funções do geoapi) ou em paralelo se independente?
-    # No seu código ine.py ele faz: "from geoapi_freguesias import..." 
-    # Então o arquivo geoapi_freguesias.py precisa existir, mas a execução dele como script 
-    # (para gerar o CSV) pode ser paralela. Vamos colocar paralelo para performance.
+    # A sintaxe [A, B] >> [C, D] cria dependências "todos para todos".
+    # Isso garante que t_geoapi rode antes de t_ine e t_meteo.
     
-    [t_geoapi, t_ine, t_cml_eco, t_osm, t_meteo, t_ocorrencias] >> t_silver >> t_gold
+    [t_geoapi, t_cml_eco, t_osm, t_ocorrencias] >> t_meteo
+    [t_geoapi, t_cml_eco, t_osm, t_ocorrencias] >> t_ine
+    
+    # Depois que Meteo e INE terminarem (e consequentemente todos os anteriores), roda a Silver
+    [t_meteo, t_ine] >> t_silver >> t_gold

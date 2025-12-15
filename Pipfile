@@ -8,6 +8,7 @@ requests = "*"
 pandas = "*"
 openpyxl = "*"
 duckdb = "*"
+s3fs = "*"
 
 [dev-packages]
 

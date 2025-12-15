@@ -1,6 +1,33 @@
-version: "3.8"
+version: '3.8'
+
+x-airflow-common:
+  &airflow-common
+  build: .
+  environment:
+    &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: LocalExecutor
+    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+    # Configurações para o Airflow se conectar ao MinIO
+    AWS_ACCESS_KEY_ID: admin
+    AWS_SECRET_ACCESS_KEY: admin12345
+    AWS_DEFAULT_REGION: us-east-1
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./codigos:/opt/airflow/codigos
+    - ./dados:/opt/airflow/dados
+    - ./logs:/opt/airflow/logs
+  user: "${AIRFLOW_UID:-50000}:0"
+  depends_on:
+    &airflow-common-depends-on
+    postgres:
+      condition: service_healthy
+    minio:
+      condition: service_started
 
 services:
+  # --- SERVIÇO 1: MINIO (Data Lake) ---
   minio:
     image: minio/minio:latest
     container_name: minio
@@ -12,7 +39,60 @@ services:
       MINIO_ROOT_PASSWORD: admin12345
     command: server /data --console-address ":9001"
     volumes:
-      - ./data:/data
+      - ./dados/minio_data:/data  # Mudei para salvar dentro da pasta 'dados' do projeto
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
 
+  # --- SERVIÇO 2: BANCO DE DADOS (Metadata do Airflow) ---
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 5
+    volumes:
+      - postgres-db-volume:/var/lib/postgresql/data
 
-# http://localhost:9001/browser
+  # --- SERVIÇO 3: AIRFLOW (Webserver, Scheduler, Init) ---
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - "8081:8080" # Mapeia porta 8081 do seu PC para 8080 do container
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    depends_on:
+      <<: *airflow-common-depends-on
+      airflow-init:
+        condition: service_completed_successfully
+
+  airflow-init:
+    <<: *airflow-common
+    command: version
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_UPGRADE: 'true'
+      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-admin}
+      _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-admin}
+
+volumes:
+  postgres-db-volume:

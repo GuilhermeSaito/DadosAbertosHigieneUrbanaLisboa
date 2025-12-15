@@ -2,6 +2,7 @@ import requests
 import pandas as pd
 import io
 import os
+from geoapi_freguesias import salvar_no_minio
 
 def get_ocorrencias_lisboa():
     # ID do dataset conforme a URL do portal (https://dados.cm-lisboa.pt/dataset/ocorrencias-na-minha-rua)
@@ -73,13 +74,18 @@ def get_ocorrencias_lisboa():
     except Exception as e:
         print(f"Erro na requisição: {e}")
         return None
+    
+geo_df_path = os.path.join("..", "..", "dados", "bronze", "ocorrencias_minha_rua.csv")
+df_ocorrencias = pd.read_csv(geo_df_path)
 
-df_ocorrencias = get_ocorrencias_lisboa()
+# df_ocorrencias = get_ocorrencias_lisboa()
 
 if df_ocorrencias is not None:
-    # Salva como CSV padronizado na nossa pasta bronze
-    output_path = os.path.join("..", "..", "dados", "bronze", "ocorrencias_minha_rua.csv")
+    # # Salva como CSV padronizado na nossa pasta bronze
+    # output_path = os.path.join("..", "..", "dados", "bronze", "ocorrencias_minha_rua.csv")
     
-    # Salvar
-    df_ocorrencias.to_csv(output_path, index=False, encoding='utf-8-sig')
-    print(f"Arquivo salvo em: {output_path}")
+    # # Salvar
+    # df_ocorrencias.to_csv(output_path, index=False, encoding='utf-8-sig')
+    # print(f"Arquivo salvo em: {output_path}")
+
+    salvar_no_minio(df_ocorrencias, "ocorrencias_minha_rua.csv")
