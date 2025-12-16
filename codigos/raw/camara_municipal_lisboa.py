@@ -66,17 +66,17 @@ def get_dados_camara_municipal_lisboa(url):
     
 
 
-geo_df_path = os.path.join("..", "..", "dados", "bronze", "ecopontos_cml.csv")
-df_ecopontos = pd.read_csv(geo_df_path)
+# geo_df_path = os.path.join("..", "..", "dados", "bronze", "ecopontos_cml.csv")
+# df_ecopontos = pd.read_csv(geo_df_path)
 
 
 
 
 # --- Execução e Salvamento ---
-# url = "https://services.arcgis.com/1dSrzEWVQn5kHHyK/arcgis/rest/services/Amb_Reciclagem/FeatureServer/2/query"
-# df_ecopontos = get_dados_camara_municipal_lisboa(url)
+url = "https://services.arcgis.com/1dSrzEWVQn5kHHyK/arcgis/rest/services/Amb_Reciclagem/FeatureServer/2/query"
+df_ecopontos = get_dados_camara_municipal_lisboa(url)
 if df_ecopontos is not None:
-    # print("Resgatando os dados dos ECOPONTOS")
+    print("Resgatando os dados dos ECOPONTOS")
     # output_path_ecopontos = os.path.join("..", "..", "dados", "bronze", "ecopontos_cml.csv")
     
     # df_ecopontos.to_csv(output_path_ecopontos, index=False, encoding='utf-8-sig')
@@ -85,14 +85,14 @@ if df_ecopontos is not None:
 
 
 
-geo_df_path = os.path.join("..", "..", "dados", "bronze", "circuitos_recolha.csv")
-df_circuito_recolha = pd.read_csv(geo_df_path)
+# geo_df_path = os.path.join("..", "..", "dados", "bronze", "circuitos_recolha.csv")
+# df_circuito_recolha = pd.read_csv(geo_df_path)
 
 
-# url = "https://services.arcgis.com/1dSrzEWVQn5kHHyK/arcgis/rest/services/CircuitosContentores/FeatureServer/0/query"
-# df_circuito_recolha = get_dados_camara_municipal_lisboa(url)
+url = "https://services.arcgis.com/1dSrzEWVQn5kHHyK/arcgis/rest/services/CircuitosContentores/FeatureServer/0/query"
+df_circuito_recolha = get_dados_camara_municipal_lisboa(url)
 if df_circuito_recolha is not None:
-    # print("Resgatando os dados dos CIRTUICOS")
+    print("Resgatando os dados dos CIRTUICOS")
     # output_path_circuito_recolha = os.path.join("..", "..", "dados", "bronze", "circuitos_recolha.csv")
     
     # df_circuito_recolha.to_csv(output_path_circuito_recolha, index=False, encoding='utf-8-sig')

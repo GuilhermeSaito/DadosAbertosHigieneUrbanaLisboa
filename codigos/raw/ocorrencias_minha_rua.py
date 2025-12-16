@@ -75,12 +75,13 @@ def get_ocorrencias_lisboa():
         print(f"Erro na requisição: {e}")
         return None
     
-geo_df_path = os.path.join("..", "..", "dados", "bronze", "ocorrencias_minha_rua.csv")
-df_ocorrencias = pd.read_csv(geo_df_path)
+# geo_df_path = os.path.join("..", "..", "dados", "bronze", "ocorrencias_minha_rua.csv")
+# df_ocorrencias = pd.read_csv(geo_df_path)
 
-# df_ocorrencias = get_ocorrencias_lisboa()
+df_ocorrencias = get_ocorrencias_lisboa()
 
 if df_ocorrencias is not None:
+    print("Resgatando os dados de ocorrencias")
     # # Salva como CSV padronizado na nossa pasta bronze
     # output_path = os.path.join("..", "..", "dados", "bronze", "ocorrencias_minha_rua.csv")
     

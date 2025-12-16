@@ -1,0 +1,45 @@
+[2025-12-15T10:53:25.153+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-15T10:53:25.204+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.bronze_ine manual__2025-12-15T10:47:31.546972+00:00 [queued]>
+[2025-12-15T10:53:25.216+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.bronze_ine manual__2025-12-15T10:47:31.546972+00:00 [queued]>
+[2025-12-15T10:53:25.217+0000] {taskinstance.py:2306} INFO - Starting attempt 2 of 2
+[2025-12-15T10:53:25.236+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): bronze_ine> on 2025-12-15 10:47:31.546972+00:00
+[2025-12-15T10:53:25.250+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=875) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-15T10:53:25.251+0000] {standard_task_runner.py:63} INFO - Started process 876 to run task
+[2025-12-15T10:53:25.250+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'higiene_urbana_lisboa_etl', 'bronze_ine', 'manual__2025-12-15T10:47:31.546972+00:00', '--job-id', '101', '--raw', '--subdir', 'DAGS_FOLDER/dag_higiene_lisboa.py', '--cfg-path', '/tmp/tmps_u69du5']
+[2025-12-15T10:53:25.253+0000] {standard_task_runner.py:91} INFO - Job 101: Subtask bronze_ine
+[2025-12-15T10:53:25.272+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-12-15T10:53:25.322+0000] {task_command.py:426} INFO - Running <TaskInstance: higiene_urbana_lisboa_etl.bronze_ine manual__2025-12-15T10:47:31.546972+00:00 [running]> on host 8216b447db0d
+[2025-12-15T10:53:25.442+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='grupo10' AIRFLOW_CTX_DAG_ID='higiene_urbana_lisboa_etl' AIRFLOW_CTX_TASK_ID='bronze_ine' AIRFLOW_CTX_EXECUTION_DATE='2025-12-15T10:47:31.546972+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-15T10:47:31.546972+00:00'
+[2025-12-15T10:53:25.444+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-15T10:53:25.466+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-15T10:53:25.467+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python ine.py']
+[2025-12-15T10:53:25.487+0000] {subprocess.py:86} INFO - Output:
+[2025-12-15T10:53:27.501+0000] {subprocess.py:93} INFO - --- FASE 1: Buscando municípios do Distrito de Lisboa ---
+[2025-12-15T10:53:27.501+0000] {subprocess.py:93} INFO - URL: https://geoapi.pt/distrito/lisboa/municipios?json=1
+[2025-12-15T10:53:27.501+0000] {subprocess.py:93} INFO - Erro crítico: 429 Client Error: Too Many Requests for url: https://geoapi.pt/distrito/lisboa/municipios?json=1
+[2025-12-15T10:53:27.502+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-12-15T10:53:27.502+0000] {subprocess.py:93} INFO -   File "/opt/***/codigos/raw/ine.py", line 69, in <module>
+[2025-12-15T10:53:27.502+0000] {subprocess.py:93} INFO -     df_conselho_lisboa = df_ine_lisboa[['codigoine', 'concelho']].drop_duplicates()
+[2025-12-15T10:53:27.502+0000] {subprocess.py:93} INFO -                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-12-15T10:53:27.502+0000] {subprocess.py:93} INFO - TypeError: 'NoneType' object is not subscriptable
+[2025-12-15T10:53:27.667+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-12-15T10:53:27.668+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-15T10:53:27.683+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-12-15T10:53:27.689+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=higiene_urbana_lisboa_etl, task_id=bronze_ine, run_id=manual__2025-12-15T10:47:31.546972+00:00, execution_date=20251215T104731, start_date=20251215T105325, end_date=20251215T105327
+[2025-12-15T10:53:27.708+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 101 for task bronze_ine (Bash command failed. The command returned a non-zero exit code 1.; 876)
+[2025-12-15T10:53:27.757+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-12-15T10:53:27.790+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-15T10:53:27.797+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

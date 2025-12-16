@@ -142,13 +142,14 @@ def salvar_no_minio(df, nome_arquivo):
         print("Dica: Verifique se o bucket 'bronze' foi criado no painel do MinIO (localhost:9001).")
 
 if __name__ == "__main__":
-    geo_df_path = os.path.join("..", "..", "dados", "bronze", "geoapi_distrito_lisboa.csv")
-    df_distrito_completo = pd.read_csv(geo_df_path)
+    # geo_df_path = os.path.join("..", "..", "dados", "bronze", "geoapi_distrito_lisboa.csv")
+    # df_distrito_completo = pd.read_csv(geo_df_path)
 
 
-    # df_distrito_completo = get_lisbon_district_full_structure()
+    df_distrito_completo = get_lisbon_district_full_structure()
 
     if df_distrito_completo is not None:
+        print(f"Resgatando os dados de GEOAPI")
         # output_path = os.path.join("..", "..", "dados", "bronze", "geoapi_distrito_lisboa.csv")
         
         # df_distrito_completo.to_csv(output_path, index=False, encoding='utf-8-sig')

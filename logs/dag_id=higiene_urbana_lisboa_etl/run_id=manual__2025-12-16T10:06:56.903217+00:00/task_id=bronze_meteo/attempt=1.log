@@ -1,0 +1,90 @@
+[2025-12-16T10:08:26.076+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-16T10:08:26.121+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.bronze_meteo manual__2025-12-16T10:06:56.903217+00:00 [queued]>
+[2025-12-16T10:08:26.134+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.bronze_meteo manual__2025-12-16T10:06:56.903217+00:00 [queued]>
+[2025-12-16T10:08:26.135+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-12-16T10:08:26.151+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): bronze_meteo> on 2025-12-16 10:06:56.903217+00:00
+[2025-12-16T10:08:26.163+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1283) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-16T10:08:26.165+0000] {standard_task_runner.py:63} INFO - Started process 1284 to run task
+[2025-12-16T10:08:26.164+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'higiene_urbana_lisboa_etl', 'bronze_meteo', 'manual__2025-12-16T10:06:56.903217+00:00', '--job-id', '131', '--raw', '--subdir', 'DAGS_FOLDER/dag_higiene_lisboa.py', '--cfg-path', '/tmp/tmptzztkgi6']
+[2025-12-16T10:08:26.166+0000] {standard_task_runner.py:91} INFO - Job 131: Subtask bronze_meteo
+[2025-12-16T10:08:26.186+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-12-16T10:08:26.233+0000] {task_command.py:426} INFO - Running <TaskInstance: higiene_urbana_lisboa_etl.bronze_meteo manual__2025-12-16T10:06:56.903217+00:00 [running]> on host 8216b447db0d
+[2025-12-16T10:08:26.359+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='grupo10' AIRFLOW_CTX_DAG_ID='higiene_urbana_lisboa_etl' AIRFLOW_CTX_TASK_ID='bronze_meteo' AIRFLOW_CTX_EXECUTION_DATE='2025-12-16T10:06:56.903217+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-12-16T10:06:56.903217+00:00'
+[2025-12-16T10:08:26.360+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-16T10:08:26.376+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-16T10:08:26.376+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python open_meteo_clima.py']
+[2025-12-16T10:08:26.396+0000] {subprocess.py:86} INFO - Output:
+[2025-12-16T10:09:44.071+0000] {subprocess.py:93} INFO - Iniciando extração para 16 concelhos via Nominatim...
+[2025-12-16T10:09:44.072+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.072+0000] {subprocess.py:93} INFO - Localizando: ALENQUER...
+[2025-12-16T10:09:44.073+0000] {subprocess.py:93} INFO -    -> Encontrado: 39.0566, -9.0076
+[2025-12-16T10:09:44.073+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.073+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.073+0000] {subprocess.py:93} INFO - Localizando: AMADORA...
+[2025-12-16T10:09:44.073+0000] {subprocess.py:93} INFO -    -> Encontrado: 38.7590, -9.2365
+[2025-12-16T10:09:44.073+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.074+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.074+0000] {subprocess.py:93} INFO - Localizando: ARRUDA DOS VINHOS...
+[2025-12-16T10:09:44.074+0000] {subprocess.py:93} INFO -    -> Encontrado: 38.9830, -9.0776
+[2025-12-16T10:09:44.074+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.074+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.074+0000] {subprocess.py:93} INFO - Localizando: AZAMBUJA...
+[2025-12-16T10:09:44.075+0000] {subprocess.py:93} INFO -    -> Encontrado: 39.0690, -8.8685
+[2025-12-16T10:09:44.075+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.075+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.075+0000] {subprocess.py:93} INFO - Localizando: CADAVAL...
+[2025-12-16T10:09:44.075+0000] {subprocess.py:93} INFO -    -> Encontrado: 39.2429, -9.1027
+[2025-12-16T10:09:44.075+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.076+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.076+0000] {subprocess.py:93} INFO - Localizando: CASCAIS...
+[2025-12-16T10:09:44.076+0000] {subprocess.py:93} INFO -    -> Encontrado: 38.6969, -9.4204
+[2025-12-16T10:09:44.076+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.076+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.076+0000] {subprocess.py:93} INFO - Localizando: LISBOA...
+[2025-12-16T10:09:44.077+0000] {subprocess.py:93} INFO -    -> Encontrado: 38.7078, -9.1366
+[2025-12-16T10:09:44.077+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.077+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.077+0000] {subprocess.py:93} INFO - Localizando: LOURES...
+[2025-12-16T10:09:44.077+0000] {subprocess.py:93} INFO -    -> Encontrado: 38.8309, -9.1685
+[2025-12-16T10:09:44.077+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.078+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.078+0000] {subprocess.py:93} INFO - Localizando: LOURINHÃ...
+[2025-12-16T10:09:44.078+0000] {subprocess.py:93} INFO -    -> Encontrado: 39.2434, -9.3119
+[2025-12-16T10:09:44.078+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.078+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.078+0000] {subprocess.py:93} INFO - Localizando: MAFRA...
+[2025-12-16T10:09:44.078+0000] {subprocess.py:93} INFO -    -> Encontrado: 38.9370, -9.3282
+[2025-12-16T10:09:44.079+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.079+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.079+0000] {subprocess.py:93} INFO - Localizando: ODIVELAS...
+[2025-12-16T10:09:44.079+0000] {subprocess.py:93} INFO -    -> Encontrado: 38.7904, -9.1793
+[2025-12-16T10:09:44.079+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.079+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.080+0000] {subprocess.py:93} INFO - Localizando: OEIRAS...
+[2025-12-16T10:09:44.080+0000] {subprocess.py:93} INFO -    -> Encontrado: 38.6926, -9.3123
+[2025-12-16T10:09:44.080+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.080+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.080+0000] {subprocess.py:93} INFO - Localizando: SINTRA...
+[2025-12-16T10:09:44.080+0000] {subprocess.py:93} INFO -    -> Encontrado: 38.8355, -9.3522
+[2025-12-16T10:09:44.080+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.081+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.081+0000] {subprocess.py:93} INFO - Localizando: SOBRAL DE MONTE AGRAÇO...
+[2025-12-16T10:09:44.081+0000] {subprocess.py:93} INFO -    -> Encontrado: 39.0183, -9.1517
+[2025-12-16T10:09:44.081+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.081+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.081+0000] {subprocess.py:93} INFO - Localizando: TORRES VEDRAS...
+[2025-12-16T10:09:44.081+0000] {subprocess.py:93} INFO -    -> Encontrado: 39.0931, -9.2607
+[2025-12-16T10:09:44.082+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.082+0000] {subprocess.py:93} INFO - 
+[2025-12-16T10:09:44.082+0000] {subprocess.py:93} INFO - Localizando: VILA FRANCA DE XIRA...
+[2025-12-16T10:09:44.082+0000] {subprocess.py:93} INFO -    -> Encontrado: 38.9121, -8.9889
+[2025-12-16T10:09:44.082+0000] {subprocess.py:93} INFO -    -> 25920 registos meteorológicos baixados.
+[2025-12-16T10:09:44.082+0000] {subprocess.py:93} INFO - Total de linhas: 414720
+[2025-12-16T10:09:44.083+0000] {subprocess.py:93} INFO - Salvando no MinIO (s3://bronze/open_meteo_distrito_lisboa.csv)...
+[2025-12-16T10:09:44.083+0000] {subprocess.py:93} INFO - Upload concluído com sucesso!
+[2025-12-16T10:09:44.573+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-16T10:09:44.573+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-16T10:09:44.610+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=higiene_urbana_lisboa_etl, task_id=bronze_meteo, run_id=manual__2025-12-16T10:06:56.903217+00:00, execution_date=20251216T100656, start_date=20251216T100826, end_date=20251216T100944
+[2025-12-16T10:09:44.638+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-12-16T10:09:44.669+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-16T10:09:44.671+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,24 @@
+[2025-12-16T09:35:31.423+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-12-16T09:35:31.463+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.bronze_geoapi scheduled__2025-12-15T00:00:00+00:00 [queued]>
+[2025-12-16T09:35:31.472+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.bronze_geoapi scheduled__2025-12-15T00:00:00+00:00 [queued]>
+[2025-12-16T09:35:31.472+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2025-12-16T09:35:31.484+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): bronze_geoapi> on 2025-12-15 00:00:00+00:00
+[2025-12-16T09:35:31.493+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'higiene_urbana_lisboa_etl', 'bronze_geoapi', 'scheduled__2025-12-15T00:00:00+00:00', '--job-id', '106', '--raw', '--subdir', 'DAGS_FOLDER/dag_higiene_lisboa.py', '--cfg-path', '/tmp/tmpthyu77_7']
+[2025-12-16T09:35:31.494+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=178) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2025-12-16T09:35:31.495+0000] {standard_task_runner.py:91} INFO - Job 106: Subtask bronze_geoapi
+[2025-12-16T09:35:31.495+0000] {standard_task_runner.py:63} INFO - Started process 184 to run task
+[2025-12-16T09:35:31.510+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-12-16T09:35:31.548+0000] {task_command.py:426} INFO - Running <TaskInstance: higiene_urbana_lisboa_etl.bronze_geoapi scheduled__2025-12-15T00:00:00+00:00 [running]> on host 8216b447db0d
+[2025-12-16T09:35:31.636+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='grupo10' AIRFLOW_CTX_DAG_ID='higiene_urbana_lisboa_etl' AIRFLOW_CTX_TASK_ID='bronze_geoapi' AIRFLOW_CTX_EXECUTION_DATE='2025-12-15T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-12-15T00:00:00+00:00'
+[2025-12-16T09:35:31.637+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-12-16T09:35:31.655+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-12-16T09:35:31.655+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python geoapi_freguesias.py']
+[2025-12-16T09:35:31.670+0000] {subprocess.py:86} INFO - Output:
+[2025-12-16T09:35:33.991+0000] {subprocess.py:93} INFO - Salvando no MinIO (s3://bronze/geoapi_distrito_lisboa.csv)...
+[2025-12-16T09:35:33.991+0000] {subprocess.py:93} INFO - Upload concluído com sucesso!
+[2025-12-16T09:35:34.330+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-12-16T09:35:34.331+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-12-16T09:35:34.362+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=higiene_urbana_lisboa_etl, task_id=bronze_geoapi, run_id=scheduled__2025-12-15T00:00:00+00:00, execution_date=20251215T000000, start_date=20251216T093531, end_date=20251216T093534
+[2025-12-16T09:35:34.404+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2025-12-16T09:35:34.428+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-12-16T09:35:34.430+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

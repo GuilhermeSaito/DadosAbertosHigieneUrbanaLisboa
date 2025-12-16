@@ -58,12 +58,13 @@ def get_osm_ecopontos():
         print(f"Erro na requisição: {e}")
         return None
 
-geo_df_path = os.path.join("..", "..", "dados", "bronze", "osm_ecopontos.csv")
-df_osm = pd.read_csv(geo_df_path)
+# geo_df_path = os.path.join("..", "..", "dados", "bronze", "osm_ecopontos.csv")
+# df_osm = pd.read_csv(geo_df_path)
 
-# df_osm = get_osm_ecopontos()
+df_osm = get_osm_ecopontos()
 
 if df_osm is not None:
+    print("Resgatando os dados do OSM")
     # output_path = os.path.join("..", "..", "dados", "bronze", "osm_ecopontos.csv")
     
     # # Salvar em CSV
