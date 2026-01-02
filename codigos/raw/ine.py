@@ -96,15 +96,15 @@ for nome, codigo in indicadores.items():
 
 # path_df_1 = os.path.join("..", "..", "dados", "bronze", "edificios_censo_ine.csv")
 # df1 = pd.read_csv(path_df_1)
-# df1.to_csv(path_df_1, index=False, encoding='utf-8-sig')
+# # df1.to_csv(path_df_1, index=False, encoding='utf-8-sig')
 # salvar_no_minio(df1, "edificios_censo_ine.csv")
 
 # path_df_2 = os.path.join("..", "..", "dados", "bronze", "populacao_escolaridade_censo_ine.csv")
 # df2 = pd.read_csv(path_df_2)
-# df2.to_csv(path_df_2, index=False, encoding='utf-8-sig')
+# # df2.to_csv(path_df_2, index=False, encoding='utf-8-sig')
 # salvar_no_minio(df2, "populacao_escolaridade_censo_ine.csv")
 
 # path_df_3 = os.path.join("..", "..", "dados", "bronze", "populacao_idade_sexo_censo_ine.csv")
 # df3 = pd.read_csv(path_df_3)
-# df3.to_csv(path_df_3, index=False, encoding='utf-8-sig')
+# # df3.to_csv(path_df_3, index=False, encoding='utf-8-sig')
 # salvar_no_minio(df3, "populacao_idade_sexo_censo_ine.csv")

@@ -1,0 +1,27 @@
+[2026-01-01T16:37:14.223+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-01-01T16:37:14.258+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.bronze_osm manual__2026-01-01T16:37:13.356582+00:00 [queued]>
+[2026-01-01T16:37:14.267+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: higiene_urbana_lisboa_etl.bronze_osm manual__2026-01-01T16:37:13.356582+00:00 [queued]>
+[2026-01-01T16:37:14.268+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-01-01T16:37:14.283+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): bronze_osm> on 2026-01-01 16:37:13.356582+00:00
+[2026-01-01T16:37:14.294+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=208) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-01-01T16:37:14.296+0000] {standard_task_runner.py:63} INFO - Started process 214 to run task
+[2026-01-01T16:37:14.294+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'higiene_urbana_lisboa_etl', 'bronze_osm', 'manual__2026-01-01T16:37:13.356582+00:00', '--job-id', '153', '--raw', '--subdir', 'DAGS_FOLDER/dag_higiene_lisboa.py', '--cfg-path', '/tmp/tmp6996ikge']
+[2026-01-01T16:37:14.297+0000] {standard_task_runner.py:91} INFO - Job 153: Subtask bronze_osm
+[2026-01-01T16:37:14.312+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2026-01-01T16:37:14.346+0000] {task_command.py:426} INFO - Running <TaskInstance: higiene_urbana_lisboa_etl.bronze_osm manual__2026-01-01T16:37:13.356582+00:00 [running]> on host 8216b447db0d
+[2026-01-01T16:37:14.431+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='grupo10' AIRFLOW_CTX_DAG_ID='higiene_urbana_lisboa_etl' AIRFLOW_CTX_TASK_ID='bronze_osm' AIRFLOW_CTX_EXECUTION_DATE='2026-01-01T16:37:13.356582+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-01-01T16:37:13.356582+00:00'
+[2026-01-01T16:37:14.431+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-01-01T16:37:14.443+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-01-01T16:37:14.443+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'python open_street_map.py']
+[2026-01-01T16:37:14.457+0000] {subprocess.py:86} INFO - Output:
+[2026-01-01T16:37:18.735+0000] {subprocess.py:93} INFO - Enviando consulta para o Overpass API...
+[2026-01-01T16:37:18.735+0000] {subprocess.py:93} INFO - Sucesso! 1639 pontos de reciclagem encontrados no OSM.
+[2026-01-01T16:37:18.735+0000] {subprocess.py:93} INFO - Resgatando os dados do OSM
+[2026-01-01T16:37:18.736+0000] {subprocess.py:93} INFO - Salvando no MinIO (s3://bronze/osm_ecopontos.csv)...
+[2026-01-01T16:37:18.736+0000] {subprocess.py:93} INFO - Upload concluído com sucesso!
+[2026-01-01T16:37:18.983+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2026-01-01T16:37:18.984+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-01-01T16:37:19.008+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=higiene_urbana_lisboa_etl, task_id=bronze_osm, run_id=manual__2026-01-01T16:37:13.356582+00:00, execution_date=20260101T163713, start_date=20260101T163714, end_date=20260101T163719
+[2026-01-01T16:37:19.065+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2026-01-01T16:37:19.086+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-01-01T16:37:19.087+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

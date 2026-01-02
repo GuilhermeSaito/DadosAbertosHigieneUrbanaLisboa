@@ -9,6 +9,8 @@ pandas = "*"
 openpyxl = "*"
 duckdb = "*"
 s3fs = "*"
+streamlit = "*"
+pyarrow = "*"
 
 [dev-packages]
 
